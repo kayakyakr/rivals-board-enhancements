@@ -1,0 +1,227 @@
+/* ----- viewed thread ------- */
+.discussionList .discussionListItem.enhancement-viewed {
+  background-color: #DEFFDE;
+}
+
+.discussionList .discussionListItem.sticky.enhancement-viewed {
+  background-color: rgb(234, 255, 238);
+}
+
+.discussionList .discussionListItem.enhancement-viewed .posterAvatar, .discussionList .discussionListItem.enhancement-viewed .stats{
+  background-color: transparent;
+}
+
+/* ----- end viewed thread ----- */
+
+/* ----- hide last post avatar ----- */
+
+body:not(.show-last-post-avatar) .lastPostInfo .avatar{
+  display: none;
+}
+
+/* ----- end hide last post avatar ----- */
+
+/* ----- hide sidebar ----- */
+
+body:not(.show-sidebar) aside.uix_mainSidebar{
+  display: none;
+}
+
+body:not(.show-sidebar) .mainContainer .mainContent{
+  margin-right: 0px !important;
+}
+
+/* ----- end hide sidebar ----- */
+
+/* ----- compact forum view ----- */
+
+.funbox {
+  display: none;
+}
+
+.discussionListItems .heading{
+  display: none;
+}
+
+.discussionListItem .posterAvatar .avatarContainer .avatar img {
+  width: 24px;
+  height: 24px;
+}
+
+.discussionListItem .posterAvatar .avatarContainer .miniMe img {
+  width: 16px;
+  height: 16px;
+}
+
+.discussionListItem .listBlock .title {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.discussionListItem .listBlock .secondRow {
+  display: inline-block;
+}
+
+.discussionListItem .listBlock .secondRow .posterDate {
+  float: none;
+}
+
+.discussionListItems .discussionListItem{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.discussionListItem .stats dl.major {
+  margin-top: 0px;
+  font-size: 11px;
+  line-height: 1.2em;
+}
+
+.discussionListItem .stats dl.minor {
+  margin-bottom: 0px;
+  font-size: 11px;
+  line-height: 1.2em;
+}
+
+.discussionListItem .lastPost .lastPostInfo {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+ol.discussionListItems .lastPostInfo a.username {
+  font-size: 11px;
+  line-height: 1.2em;
+}
+
+li.discussionListItem .lastPostInfo .dateTime {
+  font-size: 11px;
+  line-height: 1.2em;
+}
+
+/* ------- end compact forum view -------- */
+
+/* ------- collapse user info -------- */
+
+.messageUserBlock div.avatarHolder a.avatar img {
+  max-height: 96px;
+  max-width: 96px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  width: auto !important;
+  height: auto !important;
+}
+
+.messageUserInfo .messageUserBlock .userTitle, .messageUserInfo .messageUserBlock .userBanner, .messageUserInfo .messageUserBlock .extraUserInfo {
+  display: none;
+}
+
+.messageUserInfo .messageUserBlock:hover .userTitle, .messageUserInfo .messageUserBlock:hover .userBanner, .messageUserInfo .messageUserBlock:hover .extraUserInfo {
+  display: block;
+}
+
+.message .messageInfo .messageContent {
+  min-height: 0px;
+}
+
+/* ------- end collapse user info ------- */
+
+/* ----- compact thread view ----- */
+
+.messageList li.message{
+  margin: 0px auto;
+  border-radius: 0px;
+  border-top-width: 0;
+  padding: 4px;
+}
+
+.messageList li.message:first-child{
+  border-radius: 4px 4px 0px 0px;
+  border-top-width: 1px;
+}
+
+.messageList li.message:last-child{
+  border-radius: 0px 0px 4px 4px;
+}
+
+#content div.pageContent{
+  border: 0;
+  padding: 0;
+}
+
+li.message .messageContent{
+  padding: 4px 0px;
+}
+
+li.message .messageDetails{
+  padding: 2px 0px;
+  font-size: 10px;
+}
+
+li.message .messageMeta{
+  padding: 2px 0px 0px;
+  font-size: 10px;
+}
+
+li.message .messageMeta .control{
+  line-height: 1.6em;
+  padding: 0px 5px;
+}
+
+li.message .likesSummary{
+  margin: 0px;
+  padding: 4px;
+}
+
+.sharePage, .afterDiscussionListHandle {
+  border: 1px solid rgb(226, 226, 226);
+  border-bottom-width: 0px;
+  border-radius: 4px 4px 0px 0px;
+  padding: 0px 8px;
+}
+
+.sharePage .textHeading {
+  border: 0;
+}
+
+html#XenForo, html body{
+  background: #FFF;
+}
+/* ----- end compact thread view ----- */
+
+/* ----- more appropriate username weights ----- */
+
+li.message .userText .username, li.discussionListItem .titleText .username{
+  color: #333;
+  font-weight: bold;
+}
+
+ol.discussionListItems .lastPostInfo a.username {
+  font-weight: normal;
+  color: #0A4EA3;
+}
+/* ----- end more appropriate username weights ----- */
+
+/* ----- micro view ----- */
+
+#logoBlock{
+  display: none;
+}
+
+.footerLegal #copyright{
+  display: none;
+}
+
+div.footerLegal .pageContent{
+  height: 15px;
+  padding: 0px;
+  margin: 0px;
+}
+/* ----- end micro view ----- */
+
+/* ----- show paging buttons always */
+
+li.discussionListItem .itemPageNav {
+  visibility: visible;
+}
+
+/* ----- end show paging buttons always */
