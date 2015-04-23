@@ -59,15 +59,32 @@
 
 /* ----- end hide sidebar ----- */
 
+/* ----- hide sticky heading ----- */
+
+.enhancement-hide-sticky-heading .discussionListItems .heading{
+  display: none;
+}
+
+/* ----- end hide sticky heading ----- */
+
+/* ----- compact sticky heading ----- */
+
+.enhancement-compact-sticky-heading .discussionListItems .heading {
+  height: 8px;
+  overflow: hidden;
+  padding: 0px;
+  text-indent: -9999px;
+  margin-bottom: 0px;
+}
+
+/* ----- end compact sticky heading ----- */
+
 /* ----- compact forum view ----- */
 
 .enhancement-compact-forum .funbox {
   display: none;
 }
 
-.enhancement-compact-forum .discussionListItems .heading{
-  display: none;
-}
 
 .enhancement-compact-forum .discussionListItem .posterAvatar .avatarContainer .avatar img {
   width: 24px;
@@ -128,7 +145,7 @@
 
 /* ----- replace avatar ----- */
 
-.enhancement-replace-avatars .messageUserBlock div.avatarHolder a.avatar img {
+.enhancement-replace-avatars .messageUserBlock div.avatarHolder a.avatar img, .enhancement-replace-avatars div.secondaryContent a.avatar img {
   max-height: 96px;
   max-width: 96px;
   -webkit-border-radius: 0;
@@ -141,11 +158,11 @@
 
 /* ------- collapse user info -------- */
 
-.enhancement-collapse-user-info .messageUserInfo .messageUserBlock .userTitle, .messageUserInfo .messageUserBlock .userBanner, .messageUserInfo .messageUserBlock .extraUserInfo {
+.enhancement-collapse-user-info .messageUserInfo .messageUserBlock .userTitle, .enhancement-collapse-user-info .messageUserInfo .messageUserBlock .userBanner, .enhancement-collapse-user-info .messageUserInfo .messageUserBlock .extraUserInfo {
   display: none;
 }
 
-.enhancement-collapse-user-info .messageUserInfo .messageUserBlock:hover .userTitle, .messageUserInfo .messageUserBlock:hover .userBanner, .messageUserInfo .messageUserBlock:hover .extraUserInfo {
+.enhancement-collapse-user-info .messageUserInfo .messageUserBlock:hover .userTitle, .enhancement-collapse-user-info .messageUserInfo .messageUserBlock:hover .userBanner, .enhancement-collapse-user-info .messageUserInfo .messageUserBlock:hover .extraUserInfo {
   display: block;
 }
 
@@ -154,6 +171,14 @@
 }
 
 /* ------- end collapse user info ------- */
+
+/* ------- leave badge visible -------- */
+
+.enhancement-leave-badge-visible .messageUserInfo .messageUserBlock .userTitle, .enhancement-leave-badge-visible .messageUserInfo .messageUserBlock .userBanner {
+  display: block;
+}
+
+/* ------- end leave bage visible ------- */
 
 /* ----- compact thread view ----- */
 

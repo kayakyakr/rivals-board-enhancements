@@ -9,8 +9,11 @@
         hideSidebar: true,
         hideLastPostAvatar: true,
         striped: true,
+        hideStickyHeading: true,
+        compactStickyHeading: false,
         compactForum: true,
         collapseUserInfo: true,
+        leaveBadgeVisible: false,
         compactThread: true,
         whiteBackground: true,
         usernameColors: true,
@@ -23,8 +26,11 @@
         if(opts.hideSidebar){ root.addClass('enhancement-hide-sidebar'); }
         if(opts.hideLastPostAvatar){ root.addClass('enhancement-hide-last-post-avatar'); }
         if(opts.striped){ root.addClass('enhancement-striped'); }
+        if(opts.hideStickyHeading){ root.addClass('enhancement-hide-sticky-heading'); }
+        if(opts.compactStickyHeading){ root.addClass('enhancement-compact-sticky-heading'); }
         if(opts.compactForum){ root.addClass('enhancement-compact-forum'); }
         if(opts.collapseUserInfo){ root.addClass('enhancement-collapse-user-info'); }
+        if(opts.leaveBadgeVisible){ root.addClass('enhancement-leave-badge-visible'); }
         if(opts.compactThread){ root.addClass('enhancement-compact-thread'); }
         if(opts.whiteBackground){ root.addClass('enhancement-white-background'); }
         if(opts.usernameColors){ root.addClass('enhancement-username-colors'); }

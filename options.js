@@ -1,10 +1,14 @@
 // Saves options to chrome.storage.sync.
 function save_options() {
   var hideSidebar = document.getElementById('hide-sidebar').checked,
+      showSidebarToggleButton = document.getElementById('show-sidebar-toggle-button').checked,
       hideLastPostAvatar = document.getElementById('hide-last-post-avatar').checked,
       striped = document.getElementById('striped').checked,
+      hideStickyHeading = document.getElementById('hide-sticky-heading').checked,
+      compactStickyHeading = document.getElementById('compact-sticky-heading').checked,
       compactForum = document.getElementById('compact-forum').checked,
       collapseUserInfo = document.getElementById('collapse-user-info').checked,
+      leaveBadgeVisible = document.getElementById('leave-badge-visible').checked,
       compactThread = document.getElementById('compact-thread').checked,
       whiteBackground = document.getElementById('white-background').checked,
       usernameColors = document.getElementById('username-colors').checked,
@@ -15,10 +19,14 @@ function save_options() {
       replaceAvatars = document.getElementById('replace-avatars').checked;
   chrome.storage.sync.set({
     hideSidebar: hideSidebar,
+    showSidebarToggleButton: showSidebarToggleButton,
     hideLastPostAvatar: hideLastPostAvatar,
     striped: striped,
+    hideStickyHeading: hideStickyHeading,
+    compactStickyHeading: compactStickyHeading,
     compactForum: compactForum,
     collapseUserInfo: collapseUserInfo,
+    leaveBadgeVisible: leaveBadgeVisible,
     compactThread: compactThread,
     whiteBackground: whiteBackground,
     usernameColors: usernameColors,
@@ -42,10 +50,14 @@ function save_options() {
 function restore_options() {
   chrome.storage.sync.get({
     hideSidebar: true,
+    showSidebarToggleButton: true,
     hideLastPostAvatar: true,
     striped: true,
+    hideStickyHeading: true,
+    compactStickyHeading: false,
     compactForum: true,
     collapseUserInfo: true,
+    leaveBadgeVisible: false,
     compactThread: true,
     whiteBackground: true,
     usernameColors: true,
@@ -56,10 +68,14 @@ function restore_options() {
     replaceAvatars: true
   }, function(opts) {
     document.getElementById('hide-sidebar').checked = opts.hideSidebar;
+    document.getElementById('show-sidebar-toggle-button').checked = opts.showSidebarToggleButton;
     document.getElementById('hide-last-post-avatar').checked = opts.hideLastPostAvatar;
     document.getElementById('striped').checked = opts.striped;
+    document.getElementById('hide-sticky-heading').checked = opts.hideStickyHeading;
+    document.getElementById('compact-sticky-heading').checked = opts.compactStickyHeading;
     document.getElementById('compact-forum').checked = opts.compactForum;
     document.getElementById('collapse-user-info').checked = opts.collapseUserInfo;
+    document.getElementById('leave-badge-visible').checked = opts.leaveBadgeVisible;
     document.getElementById('compact-thread').checked = opts.compactThread;
     document.getElementById('white-background').checked = opts.whiteBackground;
     document.getElementById('username-colors').checked = opts.usernameColors;
