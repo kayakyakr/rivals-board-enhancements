@@ -3,7 +3,7 @@
 
   "name": "Rivals Board Enhancements",
   "description": "This extension adds a number of enhancements to the new rivals message board",
-  "version": "1.0.6",
+  "version": "1.1.1",
 
   "icons": {
     "48": "icon.png",
@@ -11,10 +11,22 @@
   },
 
   "permissions": [
+    "storage"
   ],
   "content_scripts": [{
     "matches": ["*://*.forums.rivals.com/*"],
+    "js": ["document_end.js"],
+    "run_at": "document_end"
+  },
+  {
+    "matches": ["*://*.forums.rivals.com/*"],
     "css": ["forum_enhancements.css"],
-    "js": ["jquery.js", "forum_enhancements.js"]
-  }]
+    "js": ["jquery.js", "document_start.js"],
+    "run_at": "document_start"
+  }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  }
 }
