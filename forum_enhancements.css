@@ -1,4 +1,7 @@
-
+div#userBar:not(.inactiveSticky){
+  display: block;
+  height: 40px;
+}
 
 /* ----- alternating colors ----- */
 
