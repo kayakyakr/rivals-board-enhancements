@@ -7,6 +7,7 @@ function save_options() {
       hideStickyHeading = document.getElementById('hide-sticky-heading').checked,
       compactStickyHeading = document.getElementById('compact-sticky-heading').checked,
       compactForum = document.getElementById('compact-forum').checked,
+      moderatorMode = document.getElementById('moderator-mode').checked,
       collapseUserInfo = document.getElementById('collapse-user-info').checked,
       leaveBadgeVisible = document.getElementById('leave-badge-visible').checked,
       compactThread = document.getElementById('compact-thread').checked,
@@ -25,6 +26,7 @@ function save_options() {
     hideStickyHeading: hideStickyHeading,
     compactStickyHeading: compactStickyHeading,
     compactForum: compactForum,
+    moderatorMode: moderatorMode,
     collapseUserInfo: collapseUserInfo,
     leaveBadgeVisible: leaveBadgeVisible,
     compactThread: compactThread,
@@ -41,7 +43,7 @@ function save_options() {
     status.textContent = 'Options saved.';
     setTimeout(function() {
       status.textContent = '';
-    }, 750);
+    }, 1500);
   });
 }
 
@@ -56,6 +58,7 @@ function restore_options() {
     hideStickyHeading: true,
     compactStickyHeading: false,
     compactForum: true,
+    moderatorMode: false,
     collapseUserInfo: true,
     leaveBadgeVisible: false,
     compactThread: true,
@@ -74,6 +77,7 @@ function restore_options() {
     document.getElementById('hide-sticky-heading').checked = opts.hideStickyHeading;
     document.getElementById('compact-sticky-heading').checked = opts.compactStickyHeading;
     document.getElementById('compact-forum').checked = opts.compactForum;
+    document.getElementById('moderator-mode').checked = opts.moderatorMode;
     document.getElementById('collapse-user-info').checked = opts.collapseUserInfo;
     document.getElementById('leave-badge-visible').checked = opts.leaveBadgeVisible;
     document.getElementById('compact-thread').checked = opts.compactThread;

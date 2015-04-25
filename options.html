@@ -8,52 +8,100 @@
 </head>
 
 <body>
+  <h1>When viewing any page...</h1>
+
   <div>
     <label>
       <input type="checkbox" id="hide-sidebar">
-      Hide the sidebar in all views.
+      Hide the rightmost sidebar in all views.
     </label>
   </div>
 
   <div>
     <label>
       <input type="checkbox" id="show-sidebar-toggle-button">
-      Show the sidebar toggle button.
+      Show the "toggle sidebar" button.
     </label>
   </div>
 
   <div>
     <label>
-      <input type="checkbox" id="hide-last-post-avatar">
-      Hide the last post avatar in forums view.
+      <input type="checkbox" id="micro">
+      Remove page header and footers and unneeded whitespace.
+    </label>
+  </div>
+
+  <div>
+    <label>
+      <input type="checkbox" id="white-background">
+      Display white background instead of off-grey in page margins.
     </label>
   </div>
 
   <div>
     <label>
       <input type="checkbox" id="striped">
-      Stripe rows and messages in forum and thread view.
+      Stripe alternating rows of threads and posts.
     </label>
   </div>
 
+  <h1>When viewing forum thread list...</h1>
+
   <div>
     <label>
-      <input type="checkbox" id="hide-sticky-heading">
-      Hide the heading for sticky and normal threads.
+      <input type="checkbox" id="compact-forum">
+      Compress thread title, starter, and time to one line. Remove additional padding.
     </label>
   </div>
 
   <div>
     <label>
       <input type="checkbox" id="compact-sticky-heading">
-      Display compact heading for sticky and normal threads.
+      Minimize separation between sticky and normal threads.
     </label>
   </div>
 
   <div>
     <label>
-      <input type="checkbox" id="compact-forum">
-      Display compact forum view.
+      <input type="checkbox" id="hide-sticky-heading">
+      Remove separation between sticky and normal threads.
+    </label>
+  </div>
+
+  <div>
+    <label>
+      <input type="checkbox" id="hide-op-avatar">
+      Hide the original poster's avatar.
+    </label>
+  </div>
+
+  <div>
+    <label>
+      <input type="checkbox" id="hide-last-post-avatar">
+      Hide the last poster's avatar.
+    </label>
+  </div>
+
+  <div>
+    <label>
+      <input type="checkbox" id="page-buttons-visible">
+      Always show page buttons for multi-page threads.
+    </label>
+  </div>
+
+  <div>
+    <label>
+      <input type="checkbox" id="highlight-viewed-threads">
+      Highlight threads that you've viewed that have new posts.
+    </label>
+  </div>
+
+  <h1>When reading threads...</h1>
+
+  <div>
+    <label>
+      <input type="checkbox" id="compact-thread">
+      Remove excess whitespace in and around posts.
     </label>
   </div>
 
@@ -73,50 +121,8 @@
 
   <div>
     <label>
-      <input type="checkbox" id="compact-thread">
-      Display compact thread view.
-    </label>
-  </div>
-
-  <div>
-    <label>
-      <input type="checkbox" id="white-background">
-      Display white background instead of off-grey.
-    </label>
-  </div>
-
-  <div>
-    <label>
       <input type="checkbox" id="username-colors">
-      Display more appropriate username colors.
-    </label>
-  </div>
-
-  <div>
-    <label>
-      <input type="checkbox" id="micro">
-      Show micro view. Removes header and footers and aditional spacing.
-    </label>
-  </div>
-
-  <div>
-    <label>
-      <input type="checkbox" id="page-buttons-visible">
-      Always show page buttons.
-    </label>
-  </div>
-
-  <div>
-    <label>
-      <input type="checkbox" id="hide-op-avatar">
-      Hide the original poster avatar in forums view.
-    </label>
-  </div>
-
-  <div>
-    <label>
-      <input type="checkbox" id="highlight-viewed-threads">
-      Highlight threads that you've viewed that have new posts.
+      Display dark usernames.
     </label>
   </div>
 
@@ -126,6 +132,17 @@
       Replace round avatars with square versions. Gif avatars will work.
     </label>
   </div>
+
+  <h1>Other...</h1>
+
+  <div>
+    <label>
+      <input type="checkbox" id="moderator-mode">
+      I'm a moderator!
+    </label>
+  </div>
+
+  <br>
 
   <div id="status"></div>
   <button id="save">Save</button>

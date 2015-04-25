@@ -108,7 +108,7 @@ div#userBar:not(.inactiveSticky){
   display: inline-block;
 }
 
-.enhancement-compact-forum .discussionListItem .listBlock .secondRow .posterDate {
+.enhancement-compact-forum:not(.enhancement-moderator-mode) .discussionListItem .listBlock .secondRow .posterDate {
   float: none;
 }
 

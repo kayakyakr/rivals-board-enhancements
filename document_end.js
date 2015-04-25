@@ -19,7 +19,6 @@
     },
     regularAvatars: function(){
       $('img[src^="data/avatars/m"]').each(function(i){
-        console.log('replacing ' + $(this).attr('src'));
         $(this).attr('src', $(this).attr('src').replace('data/avatars/m', 'data/avatars/l'));
       });
     },

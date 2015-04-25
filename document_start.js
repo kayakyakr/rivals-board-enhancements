@@ -12,6 +12,7 @@
         hideStickyHeading: true,
         compactStickyHeading: false,
         compactForum: true,
+        moderatorMode: false,
         collapseUserInfo: true,
         leaveBadgeVisible: false,
         compactThread: true,
@@ -29,6 +30,7 @@
         if(opts.hideStickyHeading){ root.addClass('enhancement-hide-sticky-heading'); }
         if(opts.compactStickyHeading){ root.addClass('enhancement-compact-sticky-heading'); }
         if(opts.compactForum){ root.addClass('enhancement-compact-forum'); }
+        if(opts.moderatorMode){ root.addClass('enhancement-moderator-mode'); }
         if(opts.collapseUserInfo){ root.addClass('enhancement-collapse-user-info'); }
         if(opts.leaveBadgeVisible){ root.addClass('enhancement-leave-badge-visible'); }
         if(opts.compactThread){ root.addClass('enhancement-compact-thread'); }
