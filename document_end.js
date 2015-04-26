@@ -50,15 +50,31 @@
     // live update interval
     checkForUpdates: function(){
       var url = window.location.href.replace(/\/page.*|#.*/, '') + '/show-new-posts?last_date=' + this.lastCheck;
-      console.log(url);
       $.post(url, {_xfNoRedirect: 1, _xfRequestUri: window.location.pathname, _xfToken: this.token, _xfResponseType: 'json'}).then(this.handleNewPost.bind(this));
       this.lastCheck = Math.floor(Date.now().valueOf() / 1000);
     },
     handleNewPost: function(data){
       if(data.templateHtml && data.templateHtml.trim() != ""){
-        $('#messageList').append(data.templateHtml);
+        var newMessages = $(data.templateHtml);
+        newMessages.on('click', '.ReplyQuote', this.quoteOverride);
+        $('#messageList').append(newMessages);
         $('.newMessagesNotice').remove();
       }
+    },
+    quoteOverride: function(e){
+      e.preventDefault();
+      try {
+        $('.redactor_btn_switchmode')[0].click();
+      } catch(e){
+        console.log('error: could not find the switch to bbcode');
+        return;
+      }
+      var el = $(this),
+          url = window.location.origin + '/' + el.data('posturl');
+      $.post(url, {_xfNoRedirect: 1, _xfRequestUri: window.location.pathname, _xfToken: self.token, _xfResponseType: 'json'}).then(function(data){
+        $('.bbCodeEditorContainer textarea').val(data.quote);
+        $('.bbCodeEditorContainer textarea').focus();
+      });
     },
 
     // observe the message list for changes to prevent duplicates on user post
@@ -76,6 +92,7 @@
               $('[id = "' + this.id + '"]:gt(0)').remove(); // use a jquery selector to get all duplicate additions beyond the first
             }
           });
+          $('.newMessagesNotice').remove();
         }
       });
 
