@@ -15,7 +15,7 @@ function save_options() {
       usernameColors = document.getElementById('username-colors').checked,
       micro = document.getElementById('micro').checked,
       liveUpdates = document.getElementById('live-updates').checked,
-      liveUpdatePollingInterval = document.getElementById('live-update-polling-interval').checked,
+      liveUpdatePollingInterval = Math.max(15, document.getElementById('live-update-polling-interval').value),
       pageButtonsVisible = document.getElementById('page-buttons-visible').checked,
       hideOPAvatar = document.getElementById('hide-op-avatar').checked,
       highlightViewedThreads = document.getElementById('highlight-viewed-threads').checked,

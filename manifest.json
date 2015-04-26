@@ -3,7 +3,7 @@
 
   "name": "Rivals Board Enhancements",
   "description": "This extension adds a number of enhancements to the new rivals message board",
-  "version": "1.2.0",
+  "version": "1.2.1",
 
   "icons": {
     "48": "icon.png",
