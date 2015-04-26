@@ -49,8 +49,9 @@
 
     // live update interval
     checkForUpdates: function(){
-      $.post(window.location.href.replace(/\/page.*/, '') + '/show-new-posts?last_date=' + this.lastCheck,
-            {_xfNoRedirect: 1, _xfRequestUri: window.location.pathname, _xfToken: this.token, _xfResponseType: 'json'}).then(this.handleNewPost.bind(this));
+      var url = window.location.href.replace(/\/page.*|#.*/, '') + '/show-new-posts?last_date=' + this.lastCheck;
+      console.log(url);
+      $.post(url, {_xfNoRedirect: 1, _xfRequestUri: window.location.pathname, _xfToken: this.token, _xfResponseType: 'json'}).then(this.handleNewPost.bind(this));
       this.lastCheck = Math.floor(Date.now().valueOf() / 1000);
     },
     handleNewPost: function(data){
