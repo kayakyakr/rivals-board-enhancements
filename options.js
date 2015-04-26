@@ -14,6 +14,8 @@ function save_options() {
       whiteBackground = document.getElementById('white-background').checked,
       usernameColors = document.getElementById('username-colors').checked,
       micro = document.getElementById('micro').checked,
+      liveUpdates = document.getElementById('live-updates').checked,
+      liveUpdatePollingInterval = document.getElementById('live-update-polling-interval').checked,
       pageButtonsVisible = document.getElementById('page-buttons-visible').checked,
       hideOPAvatar = document.getElementById('hide-op-avatar').checked,
       highlightViewedThreads = document.getElementById('highlight-viewed-threads').checked,
@@ -33,6 +35,8 @@ function save_options() {
     whiteBackground: whiteBackground,
     usernameColors: usernameColors,
     micro: micro,
+    liveUpdates: liveUpdates,
+    liveUpdatePollingInterval: liveUpdatePollingInterval,
     pageButtonsVisible: pageButtonsVisible,
     hideOPAvatar: hideOPAvatar,
     highlightViewedThreads: highlightViewedThreads,
@@ -65,6 +69,8 @@ function restore_options() {
     whiteBackground: true,
     usernameColors: true,
     micro: true,
+    liveUpdates: true,
+    liveUpdatePollingInterval: 60,
     pageButtonsVisible: true,
     hideOPAvatar: false,
     highlightViewedThreads: true,
@@ -84,6 +90,8 @@ function restore_options() {
     document.getElementById('white-background').checked = opts.whiteBackground;
     document.getElementById('username-colors').checked = opts.usernameColors;
     document.getElementById('micro').checked = opts.micro;
+    document.getElementById('live-updates').checked = opts.liveUpdates;
+    document.getElementById('live-update-polling-interval').value = opts.liveUpdatePollingInterval;
     document.getElementById('page-buttons-visible').checked = opts.pageButtonsVisible;
     document.getElementById('hide-op-avatar').checked = opts.hideOPAvatar;
     document.getElementById('highlight-viewed-threads').checked = opts.highlightViewedThreads;

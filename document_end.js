@@ -3,12 +3,23 @@
     chrome.storage.sync.get({
       showSidebarToggleButton: true,
       highlightViewedThreads: true,
-      replaceAvatars: true
+      replaceAvatars: true,
+      liveUpdates: true,
+      liveUpdatePollingInterval: 60,
     }, function(opts){
-      if(opts.highlightViewedThreads){ self.findViewed(); }
-      if(opts.replaceAvatars){ self.regularAvatars(); }
-      if(opts.showSidebarToggleButton){ self.appendSidebarToggleButton(); }
-    });
+      this.opts = opts;
+      if(opts.highlightViewedThreads){ this.findViewed(); }
+      if(opts.replaceAvatars){ this.regularAvatars(); }
+      if(opts.showSidebarToggleButton){ this.appendSidebarToggleButton(); }
+
+      if(opts.liveUpdates && /threads(?!.*add-reply)/.test(window.location.pathname)){ // we are in a thread view
+        window.setInterval(this.checkForUpdates.bind(this), opts.liveUpdatePollingInterval * 1000);
+        this.preventDuplicateMessages();
+      }
+    }.bind(this));
+
+    this.token = $('[name=_xfToken]').val();
+    this.lastCheck = Math.floor(Date.now().valueOf() / 1000);
 
     $(document).on('click', '.enhancement-toggle-sidebar', this.toggleSidebar);
   }
@@ -34,6 +45,42 @@
         newVal ? $('html').addClass('enhancement-hide-sidebar') : $('html').removeClass('enhancement-hide-sidebar');
         chrome.storage.sync.set({hideSidebar: newVal});
       });
+    },
+
+    // live update interval
+    checkForUpdates: function(){
+      $.post(window.location.href.replace(/\/page.*/, '') + '/show-new-posts?last_date=' + this.lastCheck,
+            {_xfNoRedirect: 1, _xfRequestUri: window.location.pathname, _xfToken: this.token, _xfResponseType: 'json'}).then(this.handleNewPost.bind(this));
+      this.lastCheck = Math.floor(Date.now().valueOf() / 1000);
+    },
+    handleNewPost: function(data){
+      if(data.templateHtml && data.templateHtml.trim() != ""){
+        $('#messageList').append(data.templateHtml);
+        $('.newMessagesNotice').remove();
+      }
+    },
+
+    // observe the message list for changes to prevent duplicates on user post
+    preventDuplicateMessages: function(){
+      var target = document.getElementById('messageList'),
+          observer = new MutationObserver(this.handleMutation.bind(this));
+
+      observer.observe(target, { attributes: true, childList: true, characterData: true });
+    },
+    handleMutation: function(mutations){
+      mutations.forEach(function(mutation){
+        if(mutation.type == 'childList' && mutation.addedNodes.length > 0){
+          $(mutation.addedNodes).each(function(){
+            if($('[id = "' + this.id + '"]').length > 1){
+              $('[id = "' + this.id + '"]:gt(0)').remove(); // use a jquery selector to get all duplicate additions beyond the first
+            }
+          });
+        }
+      });
+
+      if(this.opts.replaceAvatars && mutations.some(function(mutation){ return mutation.addedNodes.length > 0; })){
+        this.regularAvatars();
+      }
     }
   }
 

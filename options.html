@@ -3,7 +3,9 @@
 <head>
   <title>Rivals Board Enhancement Options</title>
   <style>
-    body: { padding: 10px; }
+    body {
+      white-space: nowrap;
+    }
   </style>
 </head>
 
@@ -133,6 +135,20 @@
     </label>
   </div>
 
+  <h1>Live Updates...</h1>
+
+  <div>
+    <label>
+      <input type="checkbox" id="live-updates">
+      Update threads as new posts are added.
+    </label>
+  </div>
+
+  <div>
+    <label for="live-update-polling-interval">Polling interval for live updates in seconds: </label>
+    <input type="number" id="live-update-polling-interval" min="15">
+  </div>
+
   <h1>Other...</h1>
 
   <div>
@@ -145,14 +161,14 @@
   <br>
 
   <div id="status"></div>
-  <button id="save">Save</button>
+  <p>
+    <button id="save">Save</button>
+    Like it? Enjoy. <em>Really</em> like it?
+    <a href="https://yakrware.github.io/donate.html" target="_blank">Use a credit card</a> or
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=7KU3N8KPUMY7W&lc=US&item_name=Donation&button_subtype=services&currency_code=USD&bn=PP%2dBuyNowBF%3aenVyYhV%2epng%3aNonHosted" target="_blank">Do a paypal thing</a>
+  </p>
 
   <script src="options.js"></script>
 
-  <br>
-  <br>
-  <p>Like it? Enjoy. <em>Really</em> like it?
-  <a href="https://yakrware.github.io/donate.html" target="_blank">Buy me a beer</a> or
-  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=7KU3N8KPUMY7W&lc=US&item_name=Donation&button_subtype=services&currency_code=USD&bn=PP%2dBuyNowBF%3aenVyYhV%2epng%3aNonHosted" target="_blank">Do a paypal thing</a>
 </body>
 </html>
