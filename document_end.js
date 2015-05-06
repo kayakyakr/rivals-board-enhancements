@@ -26,7 +26,7 @@
 
   DocumentEnd.prototype = {
     findViewed: function(){
-      $('.discussionListItem .title a:first-child[href$=unread]').closest('.discussionListItem').addClass('enhancement-viewed');
+      $('.discussionListItem .title a:not(.prefixLink):not(.unreadLink)[href$=unread]').closest('.discussionListItem').addClass('enhancement-viewed');
     },
     regularAvatars: function(){
       $('img[src^="data/avatars/m"]').each(function(i){
